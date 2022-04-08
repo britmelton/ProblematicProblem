@@ -5,16 +5,15 @@ using System.Threading;
 
 namespace ProblematicProblem
 {
-    internal class Program 
+    internal class Program
     {
-        Random rng;        
         static bool cont = true;
         static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
         static void Main(string[] args)
         {
             Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
-            
+
             string userInput = Console.ReadLine().ToLower();
             if (userInput == "yes")
             {
@@ -40,12 +39,9 @@ namespace ProblematicProblem
 
             Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
             string userInput2 = Console.ReadLine().ToLower();
-            bool seeList = true;
 
             if (userInput2 == "sure")
             {
-                seeList = true;
-
 
                 foreach (string activity in activities)
                 {
@@ -83,7 +79,6 @@ namespace ProblematicProblem
 
                     Console.WriteLine();
                     Console.WriteLine("Would you like to add more? yes/no: ");
-                    //addToList = bool.Parse(Console.ReadLine());
                     string userInput4 = Console.ReadLine().ToLower();
                     if (userInput4 == "yes")
                     {
@@ -96,13 +91,9 @@ namespace ProblematicProblem
                     }
                 }
             }
-            else
-            {
-                seeList = false;
-            }
-       
-           
-            
+
+
+
             while (cont)
             {
                 Console.Write("Connecting to the database");
@@ -140,7 +131,7 @@ namespace ProblematicProblem
                     Console.WriteLine("Pick something else!");
 
                     activities.Remove(randomActivity);
-                   
+
                 }
 
                 Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! \nIs this ok or do you want to grab another activity? Keep/Redo: ");
@@ -148,8 +139,8 @@ namespace ProblematicProblem
                 string userInput5 = Console.ReadLine().ToLower();
                 if (userInput5 == "redo")
                 {
-                    cont = true; 
-                    
+                    cont = true;
+
                 }
                 else
                 {
